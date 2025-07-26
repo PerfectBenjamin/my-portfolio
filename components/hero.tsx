@@ -5,32 +5,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import Link from "next/link";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { MobileQuickActions } from "@/components/mobile-quick-actions";
-import { useTouchGestures } from "@/hooks/use-touch-gestures";
 
 export function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [showQuickActions, setShowQuickActions] = useState(false);
-  const [quickActionsPosition, setQuickActionsPosition] = useState({
-    x: 0,
-    y: 0,
-  });
   const { ref, isVisible } = useScrollAnimation();
-
-  const heroGestureRef = useTouchGestures({
-    onLongPress: () => {
-      setQuickActionsPosition({
-        x: window.innerWidth / 2,
-        y: window.innerHeight / 2,
-      });
-      setShowQuickActions(true);
-    },
-    onDoubleTap: () => {
-      document
-        .getElementById("contact")
-        ?.scrollIntoView({ behavior: "smooth" });
-    },
-  });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -42,10 +20,7 @@ export function Hero() {
 
   return (
     <section
-      ref={(node) => {
-        ref.current = node;
-        heroGestureRef.current = node;
-      }}
+      ref={ref}
       className={`min-h-screen flex items-center justify-center px-4 relative overflow-hidden transition-all duration-1000 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
@@ -71,16 +46,16 @@ export function Hero() {
           </div>
 
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold tracking-tight professional-text whitespace-nowrap">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight professional-text break-words">
               <span className="text-foreground">Perfect Benjamin-Maji</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl text-primary font-light professional">
+            <h2 className="text-xl sm:text-2xl md:text-3xl text-primary font-light professional break-words">
               Fullstack Developer & Digital Architect
             </h2>
           </div>
 
           <div className="space-y-4">
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed professional-text">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed professional-text">
               Passionate about creating exceptional digital experiences with
               modern technologies. Specializing in scalable web and mobile
               applications and innovative solutions.
@@ -158,11 +133,6 @@ export function Hero() {
           </Link>
         </div>
       </div>
-      <MobileQuickActions
-        isVisible={showQuickActions}
-        onClose={() => setShowQuickActions(false)}
-        position={quickActionsPosition}
-      />
     </section>
   );
 }

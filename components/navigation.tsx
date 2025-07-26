@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Menu, X, Code2 } from "lucide-react"
-import Link from "next/link"
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu, X, Code2 } from "lucide-react";
+import Link from "next/link";
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { href: "#about", label: "About" },
@@ -23,22 +23,25 @@ export function Navigation() {
     { href: "#projects", label: "Projects" },
     { href: "#experience", label: "Experience" },
     { href: "#contact", label: "Contact" },
-  ]
+  ];
 
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : "bg-transparent"
+        scrolled
+          ? "bg-background/90 backdrop-blur-md border-b border-border"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link
             href="#"
-            className="flex items-center gap-2 font-semibold text-lg text-foreground hover:text-primary transition-colors duration-300 professional-text"
+            className="flex items-center gap-2 font-semibold text-base sm:text-lg text-foreground hover:text-primary transition-colors duration-300 professional-text break-words"
           >
-            <Code2 className="w-5 h-5 text-primary" />
-            Perfect Benjamin-Maji
+            <Code2 className="w-4 h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
+            <span className="hidden sm:inline">Perfect Benjamin-Maji</span>
+            <span className="sm:hidden">Perfect</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -63,7 +66,11 @@ export function Navigation() {
               onClick={() => setIsOpen(!isOpen)}
               className="border border-border professional-border"
             >
-              {isOpen ? <X className="w-5 h-5 text-foreground" /> : <Menu className="w-5 h-5 text-foreground" />}
+              {isOpen ? (
+                <X className="w-5 h-5 text-foreground" />
+              ) : (
+                <Menu className="w-5 h-5 text-foreground" />
+              )}
             </Button>
           </div>
         </div>
@@ -87,5 +94,5 @@ export function Navigation() {
         )}
       </div>
     </nav>
-  )
+  );
 }

@@ -12,7 +12,6 @@ import {
   Smartphone,
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { useTouchGestures } from "@/hooks/use-touch-gestures";
 
 export function Skills() {
   const [hoveredCategory, setHoveredCategory] = useState<number | null>(null);
@@ -28,12 +27,6 @@ export function Skills() {
       (prev) => (prev - 1 + skillCategories.length) % skillCategories.length
     );
   };
-
-  const skillGestureRef = useTouchGestures({
-    onSwipeLeft: nextCategory,
-    onSwipeRight: prevCategory,
-    threshold: 50,
-  });
 
   const skillCategories = [
     {

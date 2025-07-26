@@ -14,7 +14,6 @@ import { ExternalLink, Github, Star, Eye } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { useTouchGestures } from "@/hooks/use-touch-gestures";
 
 export function Projects() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
@@ -30,12 +29,6 @@ export function Projects() {
       (prev) => (prev - 1 + projects.length) % projects.length
     );
   };
-
-  const projectGestureRef = useTouchGestures({
-    onSwipeLeft: nextProject,
-    onSwipeRight: prevProject,
-    threshold: 50,
-  });
 
   const projects = [
     {
