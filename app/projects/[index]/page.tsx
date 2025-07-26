@@ -50,6 +50,13 @@ const projects = [
   },
 ];
 
+// Generate static params for all project indices
+export function generateStaticParams() {
+  return projects.map((_, index) => ({
+    index: index.toString(),
+  }));
+}
+
 // Type for Next.js dynamic route params
 interface ProjectDetailsPageProps {
   params: Promise<{ index: string }>;
