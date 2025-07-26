@@ -1,0 +1,24 @@
+@media (max-width: 768px) {
+  .responsive-gallery-image {
+    width: 100% !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    aspect-ratio: unset !important;
+  }
+  .responsive-gallery-image > span {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    aspect-ratio: unset !important;
+    display: block !important;
+  }
+  .responsive-gallery-image img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    border-radius: 0.75rem;
+  }
+}
