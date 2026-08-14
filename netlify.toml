@@ -11,8 +11,19 @@
   status = 200
   force = true
 
-[[headers]]
-  for = "/favicon.png"
-  [headers.values]
-    Content-Type = "image/png"
-    Cache-Control = "public, max-age=31536000, immutable"
+# The snapshot's JS bundle re-inserts the original site's head tags on hydration,
+# which request /favicon/* at the site root. Serve the real icon from there.
+[[redirects]]
+  from = "/favicon/site.webmanifest"
+  to = "/snapshot/favicon/site.webmanifest"
+  status = 200
+
+[[redirects]]
+  from = "/favicon/*"
+  to = "/favicon.png"
+  status = 200
+
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/favicon.png"
+  status = 200

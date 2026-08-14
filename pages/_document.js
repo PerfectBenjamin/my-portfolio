@@ -9,7 +9,6 @@ export default function Document() {
           href="/snapshot/_next/static/css/1205f04d95fac248.css"
         />
         <link rel="icon" type="image/png" href="/favicon.png" />
-        <link rel="shortcut icon" type="image/png" href="/favicon.png" />
       </Head>
       <body>
         <Main />
