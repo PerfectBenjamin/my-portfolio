@@ -12,18 +12,9 @@
   force = true
 
 # The snapshot's JS bundle re-inserts the original site's head tags on hydration,
-# which request /favicon/* at the site root. Serve the real icon from there.
-[[redirects]]
-  from = "/favicon/site.webmanifest"
-  to = "/snapshot/favicon/site.webmanifest"
-  status = 200
-
-[[redirects]]
-  from = "/favicon/*"
-  to = "/favicon.png"
-  status = 200
-
+# which request the /favicon/* icon set. Those files are real assets in
+# public/favicon, so only the browser's /favicon.ico probe needs mapping.
 [[redirects]]
   from = "/favicon.ico"
-  to = "/favicon.png"
+  to = "/favicon/favicon-32x32.png"
   status = 200
