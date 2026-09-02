@@ -966,12 +966,12 @@
                   tech: ["HTML", "CSS", "JavaScript"],
                 },
                 {
-                  title: "Grape Shop",
-                  link: "https://www.grapeshop.store/",
-                  image: "/images/projects/grape-shop.png",
-                  alt: "Grape Shop website screenshot",
-                  desc: "An e-commerce storefront platform for fashion and apparel sellers. Enables vendors to create and manage their own storefronts with a clean, modern shopping experience.",
-                  tech: ["React.js", "CSS"],
+                  title: "SendVoy Website",
+                  link: "https://sendvoy.com/",
+                  image: "/images/projects/sendvoy-website.png",
+                  alt: "SendVoy Website screenshot",
+                  desc: "The official website for SendVoy, a B2B logistics platform delivering door-to-door across Nigeria with real-time tracking, route optimisation, and instant pricing.",
+                  tech: ["HTML", "CSS", "JavaScript"],
                 },
               ].map((t, a) =>
                 (0, s.jsx)(
