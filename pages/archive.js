@@ -20,10 +20,7 @@ export default function Archive() {
         <style>{`html, body { margin: 0; padding: 0; background-color: #0f172a; }`}</style>
       </Head>
 
-      <div
-        className="group/spotlight relative"
-        onMouseMove={handleMouseMove}
-      >
+      <div className="group/spotlight relative" onMouseMove={handleMouseMove}>
         <div
           className="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute"
           style={{
@@ -184,13 +181,15 @@ export default function Archive() {
                   </td>
                   <td className="hidden py-4 pr-8 align-top lg:table-cell">
                     <ul className="flex flex-wrap gap-2">
-                      {["Flutter", "Dart", "Firebase"].map((t) => (
-                        <li key={t}>
-                          <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">
-                            {t}
-                          </div>
-                        </li>
-                      ))}
+                      {["React Native", "Expo", "Supabase", "Node.js"].map(
+                        (t) => (
+                          <li key={t}>
+                            <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">
+                              {t}
+                            </div>
+                          </li>
+                        ),
+                      )}
                     </ul>
                   </td>
                 </tr>
@@ -208,13 +207,15 @@ export default function Archive() {
                   </td>
                   <td className="hidden py-4 pr-8 align-top lg:table-cell">
                     <ul className="flex flex-wrap gap-2">
-                      {["Flutter", "Dart", "Firebase"].map((t) => (
-                        <li key={t}>
-                          <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">
-                            {t}
-                          </div>
-                        </li>
-                      ))}
+                      {["React Native", "Expo", "Supabase", "Node.js"].map(
+                        (t) => (
+                          <li key={t}>
+                            <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">
+                              {t}
+                            </div>
+                          </li>
+                        ),
+                      )}
                     </ul>
                   </td>
                 </tr>
@@ -232,13 +233,15 @@ export default function Archive() {
                   </td>
                   <td className="hidden py-4 pr-8 align-top lg:table-cell">
                     <ul className="flex flex-wrap gap-2">
-                      {["Flutter", "Dart", "Firebase"].map((t) => (
-                        <li key={t}>
-                          <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">
-                            {t}
-                          </div>
-                        </li>
-                      ))}
+                      {["React Native", "Expo", "Supabase", "Node.js"].map(
+                        (t) => (
+                          <li key={t}>
+                            <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">
+                              {t}
+                            </div>
+                          </li>
+                        ),
+                      )}
                     </ul>
                   </td>
                 </tr>
